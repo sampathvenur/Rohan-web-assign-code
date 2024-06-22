@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Constructor, Properties, and Methods Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  form {
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Constructor, Properties, and Methods Example</h1>
+
+<form id="personForm">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  <br><br>
+  <label for="age">Age:</label>
+  <input type="number" id="age" name="age" required>
+  <br><br>
+  <button type="submit">Create Person</button>
+</form>
+
+<div id="output"></div>
+
+<script>
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.sayHello = function() {
+      return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+    };
+  }
+  
+  document.getElementById("personForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var name = document.getElementById("name").value;
+    var age = parseInt(document.getElementById("age").value);
+    var newPerson = new Person(name, age);
+    var outputDiv = document.getElementById("output");
+    outputDiv.innerHTML = `<p>${newPerson.sayHello()}</p>`;
+    document.getElementById("personForm").reset();
+  });
+</script>
+
+</body>
+</html>

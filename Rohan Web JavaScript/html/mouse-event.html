@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouse Event</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    margin: 20px auto;
+    border: 2px solid blue;
+    padding: 20px;
+    text-align: center;
+    line-height: 160px;
+    font-size: 18px;
+  }
+  .box:hover {
+    cursor: pointer;
+    background-color: lightgreen;
+    color: white;
+    border-color: green;
+  }
+</style>
+</head>
+<body>
+<h1>Mouse Event</h1>
+<div class="container">
+  <div class="box" id="myBox">Hover over me!</div>
+</div>
+<script>
+  var box = document.getElementById('myBox');
+  box.addEventListener('mouseover', function() {
+    box.textContent = 'Mouse over!';
+    box.style.backgroundColor = 'lightcoral';
+    box.style.color = 'black';
+    box.style.borderColor = 'red';
+  });
+  box.addEventListener('mouseout', function() {
+    box.textContent = 'Hover over me!';
+    box.style.backgroundColor = 'lightblue';
+    box.style.color = 'white';
+    box.style.borderColor = 'blue';
+  });
+</script>
+</body>
+</html>

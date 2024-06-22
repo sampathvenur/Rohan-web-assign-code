@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inline Event Handler and Event Listener Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .box {
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 20px auto;
+    border: 2px solid blue;
+    padding: 20px;
+    text-align: center;
+    line-height: 160px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h1>Inline Event Handler and Event Listener Example</h1>
+<div class="container">
+  <div id="example1" class="box" onclick="alert('Hello!')">Click for pop-up</div>
+  <div id="example2" class="box">Click me!</div>
+</div>
+<script>
+  var example2 = document.getElementById('example2');
+  example2.addEventListener('click', function() {
+    alert('Good Morning!');
+  });
+
+  example2.addEventListener('mouseout', function() {
+    alert('Goodbye!');
+  });
+
+  example2.attachEvent('onclick', function() {
+    alert('Good Morning! (IE 8)');
+  });
+
+  example2.attachEvent('onmouseout', function() {
+    alert('Goodbye! (IE 8)');
+  });
+</script>
+</body>
+</html>

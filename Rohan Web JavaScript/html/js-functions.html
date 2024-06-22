@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+    <script>
+        function greet(name) {
+            return "Hello, " + name + "!";
+        }
+
+        const add = function(a, b) {
+            return a + b;
+        };
+
+        const multiply = (a, b) => a * b;
+
+        function showResults() {
+            const greeting = greet("Alice");
+            
+            const sum = add(5, 3);
+            
+            const product = multiply(4, 2);
+            
+            document.getElementById("greeting").innerText = greeting;
+            document.getElementById("sum").innerText = "Sum: " + sum;
+            document.getElementById("product").innerText = "Product: " + product;
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Functions Demonstration</h1>
+    <button onclick="showResults()">Show Results</button>
+
+    <div class="result">
+        <h2>Results:</h2>
+        <p id="greeting"></p>
+        <p id="sum"></p>
+        <p id="product"></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Try, Catch, and Throw</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        function checkNumber() {
+            const num = document.getElementById("numberInput").value;
+            try {
+                if (num === "") throw "is empty";
+                if (isNaN(num)) throw "is not a number";
+                const n = Number(num);
+                if (n < 5) throw "is too low";
+                if (n > 10) throw "is too high";
+                document.getElementById("result").innerText = "The number is: " + n;
+                document.getElementById("result").className = "result";
+            } catch (err) {
+                document.getElementById("result").innerText = "Error: " + err;
+                document.getElementById("result").className = "result error";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Try, Catch, and Throw Demonstration</h1>
+    <p>Enter a number between 5 and 10:</p>
+    <input type="text" id="numberInput">
+    <button onclick="checkNumber()">Check Number</button>
+
+    <div id="result" class="result"></div>
+</body>
+</html>

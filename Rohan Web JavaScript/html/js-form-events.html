@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Events Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  form {
+    margin-top: 20px;
+    text-align: left;
+  }
+  .output {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: left;
+  }
+</style>
+</head><body>
+<h1>Form Events Example</h1>
+<div class="container">
+  <form id="myForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <button type="submit">Submit</button>
+  </form>
+  
+  <div class="output" id="output"></div>
+</div>
+<script>
+  var form = document.getElementById('myForm');
+  var outputDiv = document.getElementById('output');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    outputDiv.innerHTML = `<p>Form submitted with:</p>
+                           <p>Name: ${name}</p>
+                           <p>Email: ${email}</p>`;
+  });
+  form.addEventListener('reset', function() {
+    outputDiv.innerHTML = '';
+  });
+</script></body></html>

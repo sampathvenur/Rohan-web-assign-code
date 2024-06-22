@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Built-in Objects Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .section {
+    margin-bottom: 20px;
+  }
+  .output {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+</head>
+<body>
+
+<h1>JavaScript Built-in Objects Example</h1>
+
+<!-- Boolean Example -->
+<div class="section">
+  <h2>Boolean Example</h2>
+  <div class="output" id="booleanOutput"></div>
+  <script>
+    var bool = new Boolean(false);
+    document.getElementById('booleanOutput').textContent = 'Boolean value: ' + bool.valueOf();
+  </script>
+</div>
+
+<!-- Date Example -->
+<div class="section">
+  <h2>Date Example</h2>
+  <div class="output" id="dateOutput"></div>
+  <script>
+    var date = new Date();
+    document.getElementById('dateOutput').textContent = 'Current date and time: ' + date.toLocaleString();
+  </script>
+</div>
+
+<!-- Math Example -->
+<div class="section">
+  <h2>Math Example</h2>
+  <div class="output" id="mathOutput"></div>
+  <script>
+    var randomNum = Math.random();
+    document.getElementById('mathOutput').textContent = 'Random number between 0 and 1: ' + randomNum;
+  </script>
+</div>
+
+<!-- String Example -->
+<div class="section">
+  <h2>String Example</h2>
+  <div class="output" id="stringOutput"></div>
+  <script>
+    var str = new String('Hello, world!');
+    document.getElementById('stringOutput').textContent = 'String length: ' + str.length;
+  </script>
+</div>
+
+<!-- DOM Objects Example -->
+<div class="section">
+  <h2>DOM Objects Example</h2>
+  <div class="output" id="domOutput">
+    <button onclick="changeText()">Click me!</button>
+  </div>
+  <script>
+    function changeText() {
+      var outputDiv = document.getElementById('domOutput');
+      outputDiv.innerHTML = 'Button clicked!';
+    }
+  </script>
+</div>
+
+</body>
+</html>

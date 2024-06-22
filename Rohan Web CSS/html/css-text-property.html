@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text Property</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .text-example {
+            margin-bottom: 15px;
+        }
+
+        .text-bold {
+            font-weight: bold;
+        }
+
+        .text-italic {
+            font-style: italic;
+        }
+
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-underline {
+            text-decoration: underline;
+        }
+
+        .text-spacing {
+            letter-spacing: 1px;
+        }
+
+        .text-line-height {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>CSS Text Property Example</h1>
+
+        <div class="section">
+            <h2>Font Family</h2>
+            <p class="text-example">This paragraph uses the default font family (Arial, sans-serif).</p>
+            <p class="text-example" style="font-family: 'Times New Roman', serif;">This paragraph uses Times New Roman
+                font.</p>
+            <p class="text-example" style="font-family: Verdana, sans-serif;">This paragraph uses Verdana font.</p>
+        </div>
+
+        <div class="section">
+            <h2>Font Size and Weight</h2>
+            <p class="text-example">Default font size and weight.</p>
+            <p class="text-example" style="font-size: 1.5em;">Larger font size (1.5em).</p>
+            <p class="text-example text-bold">Bold text.</p>
+        </div>
+
+        <div class="section">
+            <h2>Text Alignment and Decoration</h2>
+            <p class="text-example text-center">Center-aligned text.</p>
+            <p class="text-example text-underline">Underlined text.</p>
+            <p class="text-example text-uppercase">Uppercase text.</p>
+        </div>
+
+        <div class="section">
+            <h2>Spacing and Line Height</h2>
+            <p class="text-example text-spacing">Text with increased letter spacing.</p>
+            <p class="text-example text-line-height">Text with increased line height.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

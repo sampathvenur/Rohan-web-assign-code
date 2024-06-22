@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Progressive Enhancement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .enhanced .date-picker,
+        .enhanced .color-picker {
+            display: none;
+        }
+
+        .enhanced input[type="date"],
+        .enhanced input[type="color"] {
+            display: inline-block;
+        }
+
+        .basic input[type="text"],
+        .basic input[type="text"] {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Progressive Enhancement</h1>
+        <div id="basic" class="basic">
+            <h2>Main site for baseline older browsers</h2>
+            <div class="form">
+                <label for="basic-date">Date:</label>
+                <input type="text" id="basic-date" placeholder="mm/dd/yy">
+                <br>
+                <label for="basic-color">Color:</label>
+                <input type="text" id="basic-color" placeholder="#RRGGBB">
+            </div>
+        </div>
+
+        <div id="enhanced" class="enhanced">
+            <h2>Site with progressive enhancements</h2>
+            <div class="form">
+                <label for="enhanced-date">Date:</label>
+                <input type="date" id="enhanced-date">
+                <br>
+                <label for="enhanced-color">Color:</label>
+                <input type="color" id="enhanced-color">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if ('querySelector' in document && 'addEventListener' in window) {
+                document.getElementById('enhanced').style.display = 'block';
+                document.getElementById('basic').style.display = 'none';
+            } else {
+                document.getElementById('enhanced').style.display = 'none';
+                document.getElementById('basic').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

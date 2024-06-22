@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modify DOM Element Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .comment {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+</style>
+</head>
+<body>
+
+<h1>Modify DOM Element Example</h1>
+
+<div class="container">
+  <div id="latestComment" class="comment">
+    <p>This is the initial content of the latest comment.</p>
+  </div>
+
+  <button onclick="updateComment()">Update Comment</button>
+</div>
+
+<script>
+  function updateComment() {
+    var latest = document.getElementById("latestComment");
+    var oldMessage = latest.innerHTML;
+    var newMessage = oldMessage + "<p>Updated this div with JS</p>";
+
+    latest.innerHTML = "";
+
+    latest.innerHTML = newMessage;
+  }
+</script>
+
+</body>
+</html>

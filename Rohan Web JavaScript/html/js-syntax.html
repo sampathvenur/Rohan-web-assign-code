@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Concepts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+    <script>
+        let message = "Welcome to JavaScript Concepts!";
+        let number = 42;
+        let isLearning = true;
+
+        let fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+
+        function showMessage() {
+            document.getElementById("message").innerText = message;
+        }
+
+        function showArray() {
+            let arrayOutput = "";
+            for (let i = 0; i < fruits.length; i++) {
+                arrayOutput += fruits[i] + " ";
+            }
+            document.getElementById("array").innerText = arrayOutput;
+        }
+
+        function checkNumber() {
+            let output = "";
+            if (number > 0) {
+                output = "The number is positive.\n";
+            } else if (number < 0) {
+                output = "The number is negative.\n";
+            } else {
+                output = "The number is zero.\n";
+            }
+
+            output += "Counting from 1 to 5:\n";
+            for (let i = 1; i <= 5; i++) {
+                output += i + " ";
+            }
+
+            document.getElementById("conditional").innerText = output;
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Concepts Demonstration</h1>
+    <button onclick="showMessage()">Show Message</button>
+    <button onclick="showArray()">Show Array</button>
+    <button onclick="checkNumber()">Check Number and Loop</button>
+
+    <div class="result">
+        <h2>Results:</h2>
+        <p id="message"></p>
+        <p id="array"></p>
+        <p id="conditional"></p>
+    </div>
+</body>
+</html>

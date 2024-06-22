@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graceful Degradation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #modern .date-picker,
+        #modern .color-picker {
+            display: block;
+        }
+
+        #degraded input[type="text"] {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Graceful Degradation</h1>
+        <div id="modern">
+            <h2>Main site for modern browsers</h2>
+            <div class="form">
+                <label for="modern-date">Date:</label>
+                <input type="date" id="modern-date" class="date-picker">
+                <br>
+                <label for="modern-color">Color:</label>
+                <input type="color" id="modern-color" class="color-picker">
+            </div>
+        </div>
+
+        <div id="degraded">
+            <h2>Degraded site for baseline older browsers</h2>
+            <div class="form">
+                <label for="degraded-date">Date:</label>
+                <input type="text" id="degraded-date" placeholder="mm/dd/yy">
+                <br>
+                <label for="degraded-color">Color:</label>
+                <input type="text" id="degraded-color" placeholder="#RRGGBB">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if ('querySelector' in document && 'addEventListener' in window && 'input' in document.createElement('input')) {
+                document.getElementById('modern').style.display = 'block';
+                document.getElementById('degraded').style.display = 'none';
+            } else {
+                document.getElementById('modern').style.display = 'none';
+                document.getElementById('degraded').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
